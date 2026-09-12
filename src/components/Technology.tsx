@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import { use } from "react";
 import type { ItechnologyType } from "../types/technologyType";
 import ExploreTechnologies from "./ExploreTechnologies";
 
