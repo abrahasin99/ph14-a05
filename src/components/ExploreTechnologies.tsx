@@ -1,15 +1,30 @@
+import type { Dispatch, SetStateAction } from "react";
 import type { ItechnologyType } from "../types/technologyType";
 import Technologies from "./Technologies";
 interface ExploreTechnologiesProps {
   technologies: ItechnologyType[];
+  stack: ItechnologyType[];
+  setStack: Dispatch<SetStateAction<ItechnologyType[]>>;
 }
 
-const ExploreTechnologies = ({technologies}: ExploreTechnologiesProps) => {
+const ExploreTechnologies = ({
+  technologies,
+  stack,
+  setStack,
+}: ExploreTechnologiesProps) => {
+  const handleAdd = (technology: ItechnologyType) => {
+    setStack((currentStack) => [...currentStack, technology]);
+  };
   return (
-    <div className="grid grid-cols-3 gap-4">
-      {technologies.map((technology:ItechnologyType,ind:number) => {
+    <div className="grid flex-1 grid-cols-3 gap-4">
+      {technologies.map((technology: ItechnologyType) => {
         return (
-          <Technologies key={ind} technology={technology}/>
+          <Technologies
+            key={technology.id}
+            technology={technology}
+            onAdd={handleAdd}
+            stacked={stack.some((item) => item.id === technology.id)}
+          />
         );
       })}
     </div>

@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ItechnologyType } from "../types/technologyType";
 import { Bounce, toast } from "react-toastify";
-const Technologies = ({ technology }: { technology: ItechnologyType }) => {
-  const [stacked, setStacked] = useState(false);
+interface TechnologiesProps {
+  technology: ItechnologyType;
+  onAdd: (technology: ItechnologyType) => void;
+  stacked: boolean;
+}
+
+const Technologies = ({ technology, onAdd, stacked }: TechnologiesProps) => {
+  const [isStacked, setIsStacked] = useState(false);
+  useEffect(() => {
+    setIsStacked(stacked);
+  }, [stacked]);
   return (
     <div>
       <div
-        className={`w-full max-w-md rounded-3xl border ${stacked ? "border-pink-200 bg-pink-50" : "border-slate-200 bg-white"} p-8 shadow-sm`}
+        className={`w-full max-w-md rounded-3xl border ${isStacked ? "border-pink-200 bg-pink-50" : "border-slate-200 bg-white"} p-8 shadow-sm`}
       >
         <div className="flex items-start justify-between">
           <img
@@ -17,7 +26,7 @@ const Technologies = ({ technology }: { technology: ItechnologyType }) => {
 
           <span
             className={
-              stacked
+              isStacked
                 ? "rounded-full border border-pink-300 bg-pink-100 px-5 py-2 text-lg font-medium text-pink-500"
                 : "rounded-full border border-sky-100 bg-sky-50 px-5 py-2 text-lg font-medium text-sky-500"
             }
@@ -38,7 +47,7 @@ const Technologies = ({ technology }: { technology: ItechnologyType }) => {
 
         <div
           className={
-            stacked
+            isStacked
               ? "my-7 border-t border-pink-100"
               : "my-7 border-t border-slate-100"
           }
@@ -61,8 +70,9 @@ const Technologies = ({ technology }: { technology: ItechnologyType }) => {
 
         <button
           onClick={() => {
-            setStacked(true);
-            if (!stacked) {
+            setIsStacked(true);
+            if (!isStacked) {
+              onAdd(technology);
               toast.success(`${technology.name} added successfully`, {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -89,12 +99,12 @@ const Technologies = ({ technology }: { technology: ItechnologyType }) => {
             }
           }}
           className={
-            stacked
+            isStacked
               ? "mt-7 w-full rounded-xl text-pink-500 bg-pink-200 py-4 text-xl font-medium"
               : "mt-7 w-full rounded-xl bg-slate-950 py-4 text-xl font-medium text-white hover:bg-slate-800"
           }
         >
-          {stacked ? "Stack Added" : "Add to Stack"}
+          {isStacked ? "Stack Added" : "Add to Stack"}
         </button>
       </div>
     </div>
