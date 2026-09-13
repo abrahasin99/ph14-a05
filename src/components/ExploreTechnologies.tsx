@@ -16,7 +16,7 @@ const ExploreTechnologies = ({
     setStack((currentStack) => [...currentStack, technology]);
   };
   return (
-    <div className="grid flex-1 grid-cols-3 gap-4 pb-20">
+    <div className="grid flex-1 grid-cols-1 gap-4 pb-20 sm:grid-cols-2 xl:grid-cols-3">
       {technologies.map((technology: ItechnologyType) => {
         return (
           <Technologies

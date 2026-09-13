@@ -15,32 +15,32 @@ const Technologies = ({ technology, onAdd, stacked }: TechnologiesProps) => {
   return (
     <div>
       <div
-        className={`w-full max-w-md rounded-3xl border ${isStacked ? "border-pink-200 bg-pink-50" : "border-slate-200 bg-white"} p-8 shadow-sm`}
+        className={`w-full max-w-md rounded-3xl border ${isStacked ? "border-pink-200 bg-pink-50" : "border-slate-200 bg-white"} p-5 shadow-sm sm:p-6 lg:p-8`}
       >
         <div className="flex items-start justify-between">
           <img
             src={technology.icon}
             alt={technology.name}
-            className="h-14 w-14 object-contain"
+            className="h-10 w-10 object-contain sm:h-12 sm:w-12 lg:h-14 lg:w-14"
           />
 
           <span
             className={
               isStacked
-                ? "rounded-full border border-pink-300 bg-pink-100 px-5 py-2 text-lg font-medium text-pink-500"
-                : "rounded-full border border-sky-100 bg-sky-50 px-5 py-2 text-lg font-medium text-sky-500"
+                ? "rounded-full border border-pink-300 bg-pink-100 px-3 py-1.5 text-sm font-medium text-pink-500 sm:px-5 sm:py-2 sm:text-lg"
+                : "rounded-full border border-sky-100 bg-sky-50 px-3 py-1.5 text-sm font-medium text-sky-500 sm:px-5 sm:py-2 sm:text-lg"
             }
           >
             {technology.badge}
           </span>
         </div>
 
-        <div className="mt-10">
-          <h2 className="text-3xl font-bold text-slate-900">
+        <div className="mt-6 lg:mt-10">
+          <h2 className="text-xl font-bold text-slate-900 sm:text-2xl lg:text-3xl">
             {technology.name}
           </h2>
 
-          <p className="mt-4 text-xl leading-8 text-slate-500">
+          <p className="mt-3 text-base leading-7 text-slate-500 sm:text-lg lg:mt-4 lg:text-xl lg:leading-8">
             {technology.description}
           </p>
         </div>
@@ -48,21 +48,21 @@ const Technologies = ({ technology, onAdd, stacked }: TechnologiesProps) => {
         <div
           className={
             isStacked
-              ? "my-7 border-t border-pink-100"
-              : "my-7 border-t border-slate-100"
+              ? "my-5 border-t border-pink-100 sm:my-7"
+              : "my-5 border-t border-slate-100 sm:my-7"
           }
         ></div>
 
-        <div className="flex items-center justify-between">
-          <span className="rounded-lg bg-slate-100 px-3 py-1.5 text-lg text-slate-600">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <span className="rounded-lg bg-slate-100 px-3 py-1.5 text-sm text-slate-600 sm:text-lg">
             {technology.category}
           </span>
 
-          <span className="text-lg text-slate-500">
+          <span className="text-sm text-slate-500 sm:text-lg">
             {technology.difficulty}
           </span>
 
-          <span className="flex items-center gap-1 text-lg font-medium text-slate-700">
+          <span className="flex items-center gap-1 text-sm font-medium text-slate-700 sm:text-lg">
             <span className="text-yellow-400">★</span>
             {technology.rating}
           </span>
@@ -100,8 +100,8 @@ const Technologies = ({ technology, onAdd, stacked }: TechnologiesProps) => {
           }}
           className={
             isStacked
-              ? "mt-7 w-full rounded-xl text-pink-500 bg-pink-200 py-4 text-xl font-medium"
-              : "mt-7 w-full rounded-xl bg-slate-950 py-4 text-xl font-medium text-white hover:bg-slate-800"
+              ? "cursor-pointer mt-6 w-full rounded-xl bg-pink-200 py-3 text-base font-medium text-pink-500 sm:mt-7 sm:py-4 sm:text-xl"
+              : "cursor-pointer mt-6 w-full rounded-xl bg-slate-950 py-3 text-base font-medium text-white hover:bg-slate-800 sm:mt-7 sm:py-4 sm:text-xl"
           }
         >
           {isStacked ? "✓ Added to Stack" : "Add to Stack"}

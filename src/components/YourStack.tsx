@@ -9,26 +9,25 @@ interface YourStackProps {
 
 const YourStack = ({ stack, setStack }: YourStackProps) => {
   return (
-    <div className="h-fit w-full max-w-sm rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      {/* Heading */}
-      <h2 className="text-xl font-bold text-slate-900">Your Stack</h2>
+    <div className="h-fit w-full rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 lg:max-w-sm">
+      <h2 className="text-lg font-bold text-slate-900 sm:text-xl">
+        Your Stack
+      </h2>
 
-      {/* Selected technology count */}
       <p className="mt-1 text-sm text-slate-400">
         {stack.length === 0
           ? "No technologies selected yet."
           : `${stack.length} Technology Selected`}
       </p>
 
-      {/* Stack content */}
       <div className="mt-5">
         {stack.length === 0 ? (
-          /* Empty stack */
-          <div className="rounded-2xl border border-dashed border-slate-200 p-10 text-center">
-            <p className="text-xl text-slate-400">Your stack is empty.</p>
+          <div className="rounded-2xl border border-dashed border-slate-200 p-8 text-center sm:p-10">
+            <p className="text-lg text-slate-400 sm:text-xl">
+              Your stack is empty.
+            </p>
           </div>
         ) : (
-          /* Technologies selected */
           <div>
             <div className="space-y-2">
               {stack.map((technology) => (
@@ -36,7 +35,6 @@ const YourStack = ({ stack, setStack }: YourStackProps) => {
                   key={technology.id}
                   className="flex items-center justify-between rounded-xl border border-slate-200 p-3"
                 >
-                  {/* Technology information */}
                   <div className="flex items-center gap-3">
                     <img
                       src={technology.icon}
@@ -54,8 +52,6 @@ const YourStack = ({ stack, setStack }: YourStackProps) => {
                       </p>
                     </div>
                   </div>
-
-                  {/* Remove individual technology */}
                   <button
                     onClick={() => {
                       setStack((currentStack) =>
@@ -75,15 +71,13 @@ const YourStack = ({ stack, setStack }: YourStackProps) => {
                         transition: Bounce,
                       });
                     }}
-                    className="text-xl text-slate-400 hover:text-red-500"
+                    className="cursor-pointer text-xl text-slate-400 hover:text-red-500"
                   >
                     ×
                   </button>
                 </div>
               ))}
             </div>
-
-            {/* Remove all */}
             <button
               onClick={() => {
                 setStack([]);
@@ -99,7 +93,7 @@ const YourStack = ({ stack, setStack }: YourStackProps) => {
                   transition: Bounce,
                 });
               }}
-              className="mt-8 w-full rounded-xl border border-red-300 py-3 font-semibold text-red-500 hover:bg-red-50"
+              className="cursor-pointer mt-8 w-full rounded-xl border border-red-300 py-3 font-semibold text-red-500 hover:bg-red-50"
             >
               Remove All
             </button>

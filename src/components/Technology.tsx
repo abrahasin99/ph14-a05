@@ -11,17 +11,17 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
   const technologies = use(technologyPromise);
   const [stack, setStack] = useState<ItechnologyType[]>([]);
   return (
-    <div className="px-22">
-      <h2 className="font-extrabold text-[36px]">
+    <div className="px-4 sm:px-6 md:px-12 lg:px-22">
+      <h2 className="text-2xl font-extrabold sm:text-3xl lg:text-[36px]">
         Explore the{" "}
         <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
           Technologies
         </span>
       </h2>
-      <p className="text-[16px] text-[#64748B] font-jakarta pb-7">
+      <p className="pb-6 font-jakarta text-sm text-[#64748B] sm:text-[16px] lg:pb-7">
         Pick one technology per category to build your ideal stack.
       </p>
-      <div className="flex gap-6">
+      <div className="flex flex-col gap-6 lg:flex-row">
         <ExploreTechnologies
           technologies={technologies}
           stack={stack}
