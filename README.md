@@ -87,12 +87,12 @@ Conditional rendering means showing different UI depending on a condition. I use
 
 ### Empty Stack
 
-<img src="./public/screenshots/empty.png" alt="Empty Stack" width="800"/>
+<img src="https://raw.githubusercontent.com/abrahasin99/ph14-a05/main/public/screenshots/empty.png" alt="Empty Stack" width="800"/>
 
 ### Technology Added
 
-<img src="./public/screenshots/added.png" alt="Technology Added" width="800"/>
+<img src="https://raw.githubusercontent.com/abrahasin99/ph14-a05/main/public/screenshots/added.png" alt="Technology Added" width="800"/>
 
 ### Technology Removed
 
-<img src="./public/screenshots/remove.png" alt="Technology Removed" width="800"/>
+<img src="https://raw.githubusercontent.com/abrahasin99/ph14-a05/main/public/screenshots/remove.png" alt="Technology Removed" width="800"/>
