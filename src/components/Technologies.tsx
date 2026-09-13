@@ -104,7 +104,7 @@ const Technologies = ({ technology, onAdd, stacked }: TechnologiesProps) => {
               : "mt-7 w-full rounded-xl bg-slate-950 py-4 text-xl font-medium text-white hover:bg-slate-800"
           }
         >
-          {isStacked ? "Stack Added" : "Add to Stack"}
+          {isStacked ? "✓ Added to Stack" : "Add to Stack"}
         </button>
       </div>
     </div>
