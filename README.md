@@ -1,80 +1,98 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# Explore Technologies 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Explore Technologies is a React and TypeScript project where users can explore different technologies and build their own technology stack.
 
-Currently, two official plugins are available:
+Users can add technologies to their stack, remove individual technologies, or clear the entire stack.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Technologies Used
 
-## React Compiler
+- React
+- TypeScript
+- Tailwind CSS
+- JavaScript
+- HTML
+- Git & GitHub
+- React Toastify
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+### 1. Explore Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Users can browse different technologies and see information such as:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Technology name
+- Category
+- Description
+- Difficulty level
+- Rating
+- Badge
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 2. Build Your Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Users can add technologies to their personal stack. The selected technologies are displayed in the **Your Stack** section.
 
-```
+### 3. Manage Your Stack
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Users can remove a specific technology using the `×` button or remove all selected technologies using the **Remove All** button.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚛️ React Concepts Used
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Components
+- Props
+- State
+- State Lifting
+- `useState`
+- `useEffect`
+- Conditional Rendering
+- `.map()`
+- `key` props
+- TypeScript interfaces
+- `Suspense`
+- React `use()`
 
-```
-=======
-# ph14-a05
-React Project
->>>>>>> 0e54ccd3f7b91652aeeaef52203a6075ec6f31e8
+## 📚 React Questions & Answers
+
+### 1. What is JSX, and why is it used in React?
+
+JSX lets us write HTML-like code inside JavaScript. It makes creating and understanding React UI much easier.
+
+### 2. What is the difference between props and state?
+
+Props are data passed from a parent component to a child. State is data managed by a component that can change over time.
+
+### 3. What does the `useState` hook do, and where did you use it in this project?
+
+`useState` lets us store and update data inside a component. I used it to store the selected technologies and to control the selected state of each technology card.
+
+### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+
+`useEffect` lets us run code when something changes. In this project, I used it to keep the card's selected state synced with the stack when a technology is removed.
+
+### 5. Why does every item in a `.map()` list need a unique `key` prop?
+
+React uses the `key` to identify each item in a list. It helps React know which item was added, removed, or changed.
+
+### 6. What is conditional rendering? Show one place you used it.
+
+Conditional rendering means showing different UI depending on a condition. I used it to show an empty message when there are no selected technologies.
+
+```tsx
+{stack.length === 0 ? (
+  <p>Your stack is empty.</p>
+) : (
+  // show selected technologies
+)}
+
+## 📸 Project Preview
+
+### Empty Stack
+
+<img src="./public/screenshots/empty.png" alt="Empty Stack" width="800"/>
+
+### Technology Added
+
+<img src="./public/screenshots/added.png" alt="Technology Added" width="800"/>
+
+### Technology Removed
+
+<img src="./public/screenshots/remove.png" alt="Technology Removed" width="800"/>
