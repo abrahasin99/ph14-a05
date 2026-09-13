@@ -102,5 +102,3 @@ I used it to show an empty message when there are no selected technologies.
 
 <img src="https://raw.githubusercontent.com/abrahasin99/ph14-a05/main/public/screenshots/remove.png" alt="Technology Removed" width="800"/>
 ```
-
-This version fixes the broken Markdown code block, so the **Project Preview images will render properly on GitHub**.
