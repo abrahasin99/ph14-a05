@@ -6,3 +6,11 @@
   --font-sans: "Inter", sans-serif;
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
 }
+@theme {
+  --background-image-brand: linear-gradient(
+    to right,
+    #f97316,
+    #ec4899,
+    #8b5cf6
+  );
+}
